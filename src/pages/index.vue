@@ -1,51 +1,40 @@
 <script setup lang="ts">
+import { getProjects } from '~/content/projectQ'
+// import projects from '~/content/projects.json'
 defineOptions({
   name: 'IndexPage',
 })
+const projects = ref([])
+async function getProject() {
+  const project = await getProjects()
+  projects.value = project
+}
+onMounted(async () => {
+  await getProject()
+})
+
 const user = useUserStore()
 const name = $ref(user.savedName)
 
 const router = useRouter()
-function go() {
-  if (name)
-    router.push(`/hi/${encodeURIComponent(name)}`)
-}
 
 const { t } = useI18n()
 </script>
 
 <template>
-  <div>
-    <div text-4xl>
-      <div i-carbon-campsite inline-block />
+  <div relative h-full w-full>
+    <div absolute left-0 right-0 h-full w-full>
+      <MouseDraw h-full />
     </div>
-    <p>
-      <a rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank">
-        Vitesse
-      </a>
-    </p>
-    <p>
-      <em text-sm opacity-75>{{ t('intro.desc') }}</em>
-    </p>
+    <div flex flex-wrap items-center justify-start text-left lg:p8>
+      <div w-full flex flex-col items-start justify-center pb10 prose>
+        <h1 text-5xl lg:text-6xl>
+          Lucas Dawson
+        </h1>
+        <h2>Portfolio.</h2>
+      </div>
 
-    <div py-4 />
-
-    <TheInput
-      v-model="name"
-      placeholder="What's your name?"
-      autocomplete="false"
-      @keydown.enter="go"
-    />
-    <label class="hidden" for="input">{{ t('intro.whats-your-name') }}</label>
-
-    <div>
-      <button
-        m-3 text-sm btn
-        :disabled="!name"
-        @click="go"
-      >
-        {{ t('button.go') }}
-      </button>
+      <TheProject v-for="project in projects" :key="project" class="holder" :project="project" />
     </div>
   </div>
 </template>
