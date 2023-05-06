@@ -39,6 +39,11 @@ const tabs = [
           {{ t }}
           <div :class="tab === i ? 'bg-blue' : ''" class="h-1 w-full" />
         </li>
+        <li>
+          <RouterLink to="/about">
+            about
+          </RouterLink>
+        </li>
       </ul>
     </nav>
     <div absolute left-0 right-0 h-full w-full>
