@@ -27,7 +27,7 @@ onMounted(() => {
 })
 const tab = ref(0)
 const tabs = [
-  'web', 'games', 'drone', '3D',
+  'web', 'games', 'drone', '3D', 'school',
 ]
 </script>
 
