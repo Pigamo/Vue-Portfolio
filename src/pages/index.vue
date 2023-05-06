@@ -35,7 +35,7 @@ const tabs = [
   <div relative h-full w-full>
     <nav absolute z-99 w-full flex justify-end>
       <ul w-200 flex justify-evenly text-xl>
-        <li v-for="t, i in tabs" :key="t" @click.prevent="tab = i">
+        <li v-for="t, i in tabs" :key="t" cursor-pointer @click.prevent="tab = i">
           {{ t }}
           <div :class="tab === i ? 'bg-blue' : ''" class="h-1 w-full" />
         </li>

@@ -7,6 +7,7 @@ interface Project {
   langs: { name: string; color: string }[]
   vid: string
   mainImage: string
+  url: string
 
 }
 const { project, vid } = defineProps<{ project: Project; vid: string }>()
@@ -42,13 +43,18 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div w-full flex flex-wrap items-center justify-start>
-    <div class="lg:w-1/2" z-3 mb10 w-full flex flex-wrap skew-y-181 items-start justify-start rounded-lg p4 shadow-2xl lg:p8 lg:pr10>
+  <div relative w-full flex flex-wrap items-start justify-start>
+    <div class="lg:top-1/4 lg:w-1/2" z-3 mb10 w-full flex flex-wrap skew-y-181 items-start justify-start rounded-lg p4 shadow-2xl lg:sticky lg:p8 lg:pr10>
       <div h-full>
         <h3 order-first w-full py5 text-4xl font-bold>
-          {{ project.title }}
+          {{ project.title }} <a v-if="project.url" :href="project.url" target="_blank" rel="noreferrer" class="flex-inline items-center justify-center text-blue">
+            <div flex items-center justify-start gap-2 text-lg font-600>
+              <div i-carbon-link />
+            </div>
+          </a>
         </h3>
-        <p ref="target" px3 text-left transition-all md:pl10 md:pr20 :class="!isOutside ? 'text-red' : ''">
+
+        <p ref="target" pr3 text-left transition-all md:pr20 :class="!isOutside ? 'text-red' : ''">
           {{ project.text }}
         </p>
         <ul z-20 flex flex-wrap items-center justify-start gap-2 pt10 text-xs font-600 text-dark md:text-lg>

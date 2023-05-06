@@ -32,7 +32,7 @@ export async function getProjects(): Promise<Project[]> {
     const query = `*[_type == "post"]{
       title,
       langs[]->{title, color},
-      body,
+      url,
       text,
       mainImage,
       vid,
