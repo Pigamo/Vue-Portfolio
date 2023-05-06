@@ -1,0 +1,148 @@
+[
+  {
+    "name": "Collin's BioFarm",
+    "description": "Collin's Biofarm was built with Vue.js and is hosted on Netlify. It is a static site featuring my own videography, shot with an FPV drone and a handheld camera, as well as photography and copywriting.",
+    "website": "",
+    "github": "",
+    "video": "",
+    "img": "",
+    "langs": [{
+
+      "name": "Vue.js",
+      "color": "#41B883"
+    },
+    {
+      "name": "Javascript",
+      "color": "#F7DF1E"
+    },
+    {
+      "name": "HTML",
+      "color": "#E34F26"
+    },
+    {
+      "name": "CSS",
+      "color": "#1572B6"
+    },
+    {
+      "name": "Netlify",
+      "color": "#00C7B7"
+    },
+    {
+      "name": "Videography",
+      "color": "#FF0000"
+    },
+    {
+      "name": "Photography",
+      "color": "#FF0000"
+    },
+    {
+      "name": "Copywriting",
+      "color": "#FF0000"
+    }
+    ]
+
+  },
+  {
+    "name": "Caddis Insulation",
+    "description": "Caddis is a simple, lightweight, and fast static Vue3 site for a weatherization company in Boston. We built the site from the ground up to look modern and competitive in their market. The site is integrated with custom forms using Sendgrid, as well as Google Analytics. Copywriting was done by us. ",
+    "website": "https://caddisinsulation.com",
+    "github": "",
+    "video": "",
+    "img": "/caddis.png",
+    "langs": [
+      {
+        "name": "Vue.js",
+        "color": "#41B883"
+      },
+      {
+        "name": "Typescript",
+        "color": "#2F74C0"
+      },
+      {
+        "name": "Tailwind",
+        "color": "#38B2AC"
+      },
+      {
+        "name": "HTML",
+        "color": "#E34F26"
+      },
+      {
+        "name": "CSS",
+        "color": "#1572B6"
+      },
+      {
+        "name": "Netlify",
+        "color": "#00C7B7"
+      },
+      {
+        "name": "Sendgrid",
+        "color": "#00C7B7"
+      },
+      {
+        "name": "Google Analytics",
+        "color": "#00C7B7"
+      },
+      {
+        "name": "Copywriting",
+        "color": "#FF0000"
+      },
+      {
+        "name": "Graphics",
+        "color": "#FF0000"
+      }
+    ]
+
+  },
+  {
+    "name": "Coeus Research",
+    "description": "Coeus research is another static Vue3 site, this time for an investment research company based in NS, Canada. Like Caddism this site is integrated with custom forms using Sendgrid, as well as Google Analytics. I did in depth research finding studies that indicated a stronger brand message that I could base the copywriting around. Using this whitepaper I was able to effectively communicate the company's value proposition to their target audience.",
+    "website": "https://coeusresearch.ca",
+    "github": "",
+    "video": "",
+    "img": "/coeus.png",
+    "langs": [
+      {
+        "name": "Vue.js",
+        "color": "#41B883"
+      },
+      {
+        "name": "Typescript",
+        "color": "#2F74C0"
+      },
+      {
+        "name": "Tailwind",
+        "color": "#38B2AC"
+      },
+      {
+        "name": "HTML",
+        "color": "#E34F26"
+      },
+      {
+        "name": "CSS",
+        "color": "#1572B6"
+      },
+      {
+        "name": "Netlify",
+        "color": "#00C7B7"
+      },
+      {
+        "name": "Sendgrid",
+        "color": "#00C7B7"
+      },
+      {
+        "name": "Google Analytics",
+        "color": "#00C7B7"
+      },
+      {
+        "name": "Copywriting",
+        "color": "#FF0000"
+      },
+      {
+        "name": "Graphics",
+        "color": "#FF0000"
+      }
+    ]
+
+  }
+
+]
