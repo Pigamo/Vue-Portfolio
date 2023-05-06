@@ -2,19 +2,13 @@
 title: About Me
 ---
 
-<nav absolute z-99 w-full flex justify-end>
-      <ul w-200 flex justify-evenly text-xl>
-        <li>
+<nav absolute z-99 w-full flex justify-end  p10 left-0 top-0>
           <RouterLink to="/">
             portfolio
           </RouterLink>
-        </li>  
-      </ul>
 </nav>
 
-<div absolute left-0 right-0 top-0 bottom-0>
-      <MouseDraw h-min />
-</div>
+
     
 ## Starting out
 
