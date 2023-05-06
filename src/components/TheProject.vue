@@ -43,7 +43,7 @@ onMounted(async () => {
 
 <template>
   <div w-full flex flex-wrap items-center justify-start>
-    <div class="lg:w-1/2" z-3 mb10 w-full flex flex-wrap skew-y-181 items-start justify-start rounded-lg bg-white p4 shadow-2xl lg:p8 lg:pr10>
+    <div class="lg:w-1/2" z-3 mb10 w-full flex flex-wrap skew-y-181 items-start justify-start rounded-lg p4 shadow-2xl lg:p8 lg:pr10>
       <div h-full>
         <h3 order-first w-full py5 text-4xl font-bold>
           {{ project.title }}
