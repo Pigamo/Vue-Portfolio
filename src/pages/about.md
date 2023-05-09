@@ -41,25 +41,3 @@ I like to pilot my drone when I find a nice open field to play in. I also am an 
 
 I want to go live in Korea, as I have been learning the language and need a change of scenery.
 
-here comes the code again
-
-```java
-  private float money = 0.0f;
-  private PlaneTicket planeTicket;
-  private Job job;
-  private static LINKED_IN_JOB_LISTINGS = 10000;
-  public ApplyToRemote() {
-      for(int i = 0; i < LINKED_IN_JOB_LISTINGS; i++) {
-        if(money>planeTicket.getCost()){ 
-          return;
-        }
-
-        job = new Job();
-        job.applyTo();
-        
-        if(job.accepted()){
-          // Implement when necessary 
-        }
-      }
-  }
-```
