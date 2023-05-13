@@ -46,9 +46,9 @@ const tabs = [
         </li>
       </ul>
     </nav>
-    <div absolute left-0 right-0 h-full w-full>
+    <!-- <div absolute left-0 right-0 h-full w-full>
       <MouseDraw h-full />
-    </div>
+    </div> -->
     <div flex flex-wrap items-center justify-start text-left lg:p8>
       <div w-full flex flex-col items-start justify-center pb10 prose>
         <h1 text-5xl lg:text-6xl>
@@ -60,9 +60,10 @@ const tabs = [
           </div>
         </h2>
       </div>
-      <TransitionGroup name="fade">
+      <ProjectOverview :projects="projects.filter(proj => proj.type === tabs[tab])" />
+      <!-- <TransitionGroup name="fade">
         <TheProject v-for="project, i in projects.filter(proj => proj.type === tabs[tab])" :key="project" class="holder" :project="project" :vid="vid[i]" />
-      </TransitionGroup>
+      </TransitionGroup> -->
     </div>
   </div>
 </template>
