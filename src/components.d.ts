@@ -9,7 +9,9 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    MiniProject: typeof import('./components/MiniProject.vue')['default']
     MouseDraw: typeof import('./components/MouseDraw.vue')['default']
+    ProjectOverview: typeof import('./components/ProjectOverview.vue')['default']
     README: typeof import('./components/README.md')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
