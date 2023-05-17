@@ -55,12 +55,11 @@ const router = useRouter()
 
 <template>
   <div
-    relative
 
-    min-h-80 w-full flex cursor-pointer items-center justify-center overflow-hidden @click.prevent="() => router.push(project.slug.current)" shadow-md :class="video.length > 0 ? '  col-span-5' : 'col-span-5'"
+    relative col-span-12 min-h-80 w-full flex cursor-pointer items-center justify-center @click.prevent="() => router.push(project.slug.current)" overflow-hidden shadow-md :class="video.length > 0 ? '  md:col-span-5' : 'md:col-span-5'"
   >
     <div ref="target" relative z-2 h-full w-full>
-      <div h-full w-full flex items-center justify-start p5 text-6xl font-bold text-light transition-opacity duration-500 ease-in-out hover:opacity-0 class="bg-dark/50">
+      <div h-full w-full flex items-center justify-start p5 text-4xl font-bold text-light transition-opacity duration-500 ease-in-out md:text-6xl hover:opacity-0 class="bg-dark/50">
         {{ project.title }}
       </div>
     </div>

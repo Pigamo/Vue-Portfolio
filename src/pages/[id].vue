@@ -18,7 +18,7 @@ onMounted(async () => {
 
 <template>
   <div w-full flex flex-col items-start justify-start>
-    <div pl10 text-3xl>
+    <div pl5 text-3xl lg:pl8>
       <RouterLink to="/">
         Home
       </RouterLink>
