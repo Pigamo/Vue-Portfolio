@@ -17,11 +17,6 @@ const target = ref(null)
 const { x, y, isOutside } = useMouseInElement(target)
 const video = ref<string>('')
 
-async function getVideo(n: string) {
-  const v = await getVid(n)
-  video.value = v
-}
-
 const videoUrls = ref<Map<string, string>>(new Map())
 
 async function getVideoUrl(videoName: string) {
@@ -34,19 +29,24 @@ async function getVideoUrl(videoName: string) {
     return videoUrl
   }
 }
-onMounted(async () => {
-  if (project.vid === null || project.vid === undefined || project.vid === '')
-    return
-
-  video.value = await getVideoUrl(project.vid)
+async function getVideo(n: string) {
+  const v = await getVideoUrl(n)
+  video.value = v
+}
+watch(() => project, (newValue, oldValue) => {
+  if (newValue !== oldValue) {
+    if (project.vid === undefined || project.vid === null || project.vid === '')
+      return
+    getVideo(project.vid)
+  }
 })
 </script>
 
 <template>
-  <div relative w-full flex flex-wrap items-start justify-start>
-    <div class="lg:top-1/4 lg:w-1/2" z-3 mb10 w-full flex flex-wrap skew-y-181 items-start justify-start rounded-lg p4 shadow-2xl lg:sticky lg:p8 lg:pr10>
+  <div v-if="project" relative w-full flex flex-wrap items-start justify-start text-left>
+    <div class="lg:top-1/4 lg:w-1/2" z-3 mb10 w-full flex flex-wrap items-start justify-start rounded-lg p4 lg:sticky lg:p8 lg:pr10>
       <div h-full>
-        <h3 order-first w-full py5 text-4xl font-bold>
+        <h3 order-first w-full py8 text-4xl font-bold>
           {{ project.title }} <a v-if="project.url" :href="project.url" target="_blank" rel="noreferrer" class="flex-inline items-center justify-center text-blue">
             <div flex items-center justify-start gap-2 text-lg font-600>
               <div i-carbon-link />
@@ -64,7 +64,7 @@ onMounted(async () => {
         </ul>
       </div>
     </div>
-    <video v-if="video.length > 0" :src="video" class="z-1 lg:w-1/2" autoplay loop muted playsinline w-full p4 />
+    <video v-if="video.length > 0" :src="video" class="z-1 lg:w-1/2" loop muted playsinline autoplay w-full p4 />
     <img v-else-if="project.mainImage" :src="project.mainImage" class="z-1 lg:w-1/2" w-full p4>
   </div>
 </template>

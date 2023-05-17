@@ -37,6 +37,7 @@ export async function getProjects(): Promise<Project[]> {
       mainImage,
       vid,
       type,
+      slug
     }`
     const data = await fetch<Project[]>(query, {}, 'proj')
 
@@ -54,5 +55,31 @@ export async function getProjects(): Promise<Project[]> {
   catch (error) {
     // console.log(error)
     return []
+  }
+}
+
+export async function getProject(slug: string) {
+  try {
+    const query = `*[_type == "post" && slug.current == "${slug}"] {
+      slug,
+     title,
+      langs[]->{title, color},
+      url,
+      text,
+      mainImage,
+      vid,
+      type,
+    }[0]`
+    const project = await fetch<Project>(query, {}, 'project', true)
+
+    if (!project.mainImage)
+      return project
+    return {
+      ...project,
+      mainImage: urlFor(project.mainImage),
+    }
+  }
+  catch (error) {
+
   }
 }

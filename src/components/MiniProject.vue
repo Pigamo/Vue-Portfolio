@@ -50,12 +50,14 @@ watchEffect(() => {
   else if (vis.isOutside.value)
     vidControls.value.pause()
 })
+const router = useRouter()
 </script>
 
 <template>
   <div
+    relative
 
-    relative min-h-80 w-full flex cursor-pointer items-center justify-center overflow-hidden shadow-md :class="video.length > 0 ? '  col-span-5' : 'col-span-5'"
+    min-h-80 w-full flex cursor-pointer items-center justify-center overflow-hidden @click.prevent="() => router.push(project.slug.current)" shadow-md :class="video.length > 0 ? '  col-span-5' : 'col-span-5'"
   >
     <div ref="target" relative z-2 h-full w-full>
       <div h-full w-full flex items-center justify-start p5 text-6xl font-bold text-light transition-opacity duration-500 ease-in-out hover:opacity-0 class="bg-dark/50">
@@ -65,7 +67,7 @@ watchEffect(() => {
     <video
       v-if="video.length > 0"
       ref="vidControls" :src="`${video}#t=12`"
-      :autoplay="!vis.isOutside" class="-z-1" loop muted playsinline object-fit absolute left-0 top-0 h-full w-full object-cover
+      :autoplay="!vis.isOutside" class="-z-1" loop muted object-fit playsinline absolute left-0 top-0 h-full w-full object-cover
     />
     <img
       v-else-if="project.mainImage"
